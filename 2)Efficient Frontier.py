@@ -140,7 +140,6 @@ def ef_graph(meanreturn, covmatrix, riskFreeRate=0, constraintSet=(0,1)):
     ef_Curve=go.Scatter(
         name='Efficient Frontier',
         mode='lines',
-        fill='GR',
         x=[round(ef_std*100,2) for ef_std in efficientList],
         y=[round(target*100,2) for target in targetReturn],
         line=dict(color='black',width=3,dash='dashdot')
