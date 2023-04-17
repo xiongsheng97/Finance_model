@@ -7,12 +7,12 @@ import scipy as sc
 import plotly.graph_objects as go
 yf.pdr_override()
 
-stock=['TSLA','BABA','GOOG']
+stock=[]
 
-#a=int(input('Number of stocks:'))
-#for i in range (a):
-#   stocklist=input("Please enter stock:").upper()
-#   stock.append(stocklist)
+a=int(input('Number of stocks:'))
+for i in range (a):
+   stocklist=input("Please enter stock:").upper()
+   stock.append(stocklist)
 end=dt.datetime.now()
 start=dt.datetime(2015,12,15) #start=end-dt.timedelta(days=500) if want by days
 
@@ -113,7 +113,7 @@ def calculatedResults(meanreturn, covmatrix, riskFreeRate=0, constraintSet=(0,1)
 
     return maxSR_returns,maxSR_std,maxSR_allocation,minvol_returns,minvol_std,minvol_allocation,efficientList,targetReturn
 
-#print (calculatedResults(meanreturn, covmatrix))
+print (calculatedResults(meanreturn, covmatrix))
 print (efficientOpt(meanreturn, covmatrix,1))
 
 def ef_graph(meanreturn, covmatrix, riskFreeRate=0, constraintSet=(0,1)):
